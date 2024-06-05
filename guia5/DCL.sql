@@ -98,10 +98,10 @@ GRANT 'Sobrecargo' TO 'usuario_sobrecargo'@'localhost';
 
 select 
 	emp.nombre, emp.apellido, emp.dui,
-    emp.celular, emp.correo, car.cargo,
-    dir.linea1, dir.linea2, dir.distrito, mun.municipio, dep.departamento
+    emp.celular, car.cargo,
+    dir.linea1, dir.linea2, c.ciudad, e.estado, p.pais
     from empleado emp
-    inner join cargo car on emp.idCargo = car.odCargo
+    inner join cargo car on emp.idCargo = car.idCargo
     inner join direccion dir on emp.idDireccion = dir.idDireccion
 	inner join ciudad c ON dir.idCiudad = c.idCiudad
 	inner join estado e ON c.idEstado = e.idEstado
